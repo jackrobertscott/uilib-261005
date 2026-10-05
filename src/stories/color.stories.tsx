@@ -81,6 +81,23 @@ export const barChart = defineStories({
       ),
     },
     {
+      name: 'Small counts (integer ticks)',
+      layout: 'padded',
+      render: () => (
+        <div className="sb-w-full">
+          <BarChart
+            integer
+            aria-label="Games per points total"
+            height={180}
+            data={[0, 1, 0, 1, 1, 0].map((v, i) => ({ label: String(i + 8), values: { games: v } }))}
+            series={[{ key: 'games', label: 'Games' }]}
+            xLabel="Points scored"
+            yLabel="Occurrences"
+          />
+        </div>
+      ),
+    },
+    {
       name: 'Grouped',
       layout: 'padded',
       render: () => (

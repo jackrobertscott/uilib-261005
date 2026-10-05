@@ -39,6 +39,8 @@
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text);
   vertical-align: middle;
+  /* Keep values on one line; narrow screens scroll the table instead of wrapping cells. */
+  white-space: nowrap;
 }
 .ui-table tbody tr:last-child td { border-bottom: 0; }
 .ui-table tbody tr { transition: background-color var(--dur-fast); }

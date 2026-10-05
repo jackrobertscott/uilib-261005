@@ -2,6 +2,8 @@
 
 A themeable React component library with a Storybook-like workbench, inspired by a minimal monochrome file-manager design.
 
+**Live workbench:** https://web-production-6b5be.up.railway.app
+
 ```bash
 npm install
 npm run dev      # workbench at http://localhost:5173

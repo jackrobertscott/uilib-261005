@@ -143,28 +143,6 @@ export default defineStories({
       ),
     },
     {
-      name: 'Pinned column, short headers',
-      layout: 'padded',
-      render: () => (
-        <div style={{ maxWidth: 360 }}>
-          <DataTable
-            bordered
-            density="compact"
-            pinFirstColumn
-            rows={files.slice(0, 5)}
-            rowKey={(f) => f.id}
-            columns={[
-              { key: 'name', header: 'Name' },
-              { key: 'size', header: 'Size', shortHeader: 'Sz', align: 'right', width: 72 },
-              { key: 'type', header: 'Type', shortHeader: 'Ty', width: 72, render: (f) => f.type.toUpperCase() },
-              { key: 'owner', header: 'Owner', width: 120, render: (f) => f.owner.name },
-              { key: 'modified', header: 'Last modified', shortHeader: 'Modified', width: 140, render: (f) => fmtDate(f.modified) },
-            ]}
-          />
-        </div>
-      ),
-    },
-    {
       name: 'Loading',
       layout: 'padded',
       render: () => <DataTable loading rows={[]} rowKey={(f: FileRow) => f.id} columns={fileColumns().slice(0, 3)} selectable />,

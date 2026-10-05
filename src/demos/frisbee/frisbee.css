@@ -202,7 +202,7 @@
 .fr-tool__text { display: flex; flex-direction: column; gap: 2px; }
 
 /* Auth / setup ------------------------------------------------------------ */
-.fr-auth { height: 100%; overflow-y: auto; display: grid; place-items: center; padding: var(--sp-8) var(--sp-4); background: var(--bg-app); border: 1px solid var(--border); border-radius: var(--radius-xl); }
+.fr-auth { height: 100%; overflow-y: auto; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: var(--sp-8) var(--sp-4); background: var(--bg-app); border: 1px solid var(--border); border-radius: var(--radius-xl); }
 .fr-auth__inner { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: var(--sp-6); }
 .fr-auth__card { box-shadow: var(--shadow-md); }
 .fr-auth__back { align-self: center; }

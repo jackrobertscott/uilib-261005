@@ -57,6 +57,25 @@ export const tabs = defineStories({
         </Tabs>
       ),
     },
+    {
+      name: 'Vertical',
+      description: 'orientation="vertical" stacks the list beside the panel — for settings dialogs and side navigation. Up/Down arrows move between tabs.',
+      layout: 'padded',
+      render: () => (
+        <Tabs orientation="vertical" defaultValue="account" className="sb-w-full">
+          <TabList aria-label="Settings">
+            <Tab value="account" icon={<User />}>Account</Tab>
+            <Tab value="team" icon={<Users />} count={8}>Team</Tab>
+            <Tab value="billing" icon={<CreditCard />}>Billing</Tab>
+            <Tab value="notifications" icon={<Bell />}>Notifications</Tab>
+          </TabList>
+          <TabPanel value="account"><Text tone="secondary" size="sm">Account settings panel.</Text></TabPanel>
+          <TabPanel value="team"><Text tone="secondary" size="sm">Team panel.</Text></TabPanel>
+          <TabPanel value="billing"><Text tone="secondary" size="sm">Billing panel.</Text></TabPanel>
+          <TabPanel value="notifications"><Text tone="secondary" size="sm">Notifications panel.</Text></TabPanel>
+        </Tabs>
+      ),
+    },
   ],
 });
 

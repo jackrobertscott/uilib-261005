@@ -8,6 +8,7 @@ interface TabsCtx {
   baseId: string;
   variant: TabsVariant;
   size: 'sm' | 'md';
+  orientation: 'horizontal' | 'vertical';
 }
 const TabsContext = createContext<TabsCtx | null>(null);
 const useTabs = () => {
@@ -25,17 +26,19 @@ export interface TabsProps {
   /** line = underline; segmented = joined buttons (reference design); pills = soft fills. */
   variant?: TabsVariant;
   size?: 'sm' | 'md';
+  /** vertical = tab list stacked on the left of the panel (settings-style navigation). */
+  orientation?: 'horizontal' | 'vertical';
   children: ReactNode;
   className?: string;
 }
 
 /** Tabbed navigation between panels. */
-export function Tabs({ value, defaultValue = '', onValueChange, variant = 'line', size = 'md', children, className }: TabsProps) {
+export function Tabs({ value, defaultValue = '', onValueChange, variant = 'line', size = 'md', orientation = 'horizontal', children, className }: TabsProps) {
   const [v, set] = useControllable(value, defaultValue, onValueChange);
   const baseId = useId();
   return (
-    <TabsContext.Provider value={{ value: v, setValue: set, baseId, variant, size }}>
-      <div className={cx('ui-tabs', className)} data-variant={variant}>
+    <TabsContext.Provider value={{ value: v, setValue: set, baseId, variant, size, orientation }}>
+      <div className={cx('ui-tabs', className)} data-variant={variant} data-orientation={orientation}>
         {children}
       </div>
     </TabsContext.Provider>
@@ -43,15 +46,16 @@ export function Tabs({ value, defaultValue = '', onValueChange, variant = 'line'
 }
 
 export function TabList({ children, className, 'aria-label': ariaLabel }: { children: ReactNode; className?: string; 'aria-label'?: string }) {
-  const { variant, value, size } = useTabs();
+  const { variant, value, size, orientation } = useTabs();
+  const vertical = orientation === 'vertical';
   const ref = useRef<HTMLDivElement>(null);
-  const [indicator, setIndicator] = useState<{ left: number; width: number } | null>(null);
+  const [indicator, setIndicator] = useState<{ left: number; width: number; top: number; height: number } | null>(null);
 
   // Sliding indicator under/behind the active tab.
   useLayoutEffect(() => {
     const el = ref.current?.querySelector<HTMLElement>('[role=tab][aria-selected=true]');
     if (!el) return setIndicator(null);
-    const update = () => setIndicator({ left: el.offsetLeft, width: el.offsetWidth });
+    const update = () => setIndicator({ left: el.offsetLeft, width: el.offsetWidth, top: el.offsetTop, height: el.offsetHeight });
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
@@ -62,8 +66,9 @@ export function TabList({ children, className, 'aria-label': ariaLabel }: { chil
     const tabs = Array.from(ref.current?.querySelectorAll<HTMLButtonElement>('[role=tab]:not(:disabled)') ?? []);
     const i = tabs.indexOf(document.activeElement as HTMLButtonElement);
     let next = -1;
-    if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
-    else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+    const [nextKey, prevKey] = vertical ? ['ArrowDown', 'ArrowUp'] : ['ArrowRight', 'ArrowLeft'];
+    if (e.key === nextKey) next = (i + 1) % tabs.length;
+    else if (e.key === prevKey) next = (i - 1 + tabs.length) % tabs.length;
     else if (e.key === 'Home') next = 0;
     else if (e.key === 'End') next = tabs.length - 1;
     if (next >= 0) {
@@ -74,8 +79,24 @@ export function TabList({ children, className, 'aria-label': ariaLabel }: { chil
   };
 
   return (
-    <div ref={ref} role="tablist" aria-label={ariaLabel} className={cx('ui-tablist', className)} data-variant={variant} data-size={size} onKeyDown={onKeyDown}>
-      {indicator && <span className="ui-tablist__indicator" style={{ transform: `translateX(${indicator.left}px)`, width: indicator.width }} aria-hidden />}
+    <div
+      ref={ref}
+      role="tablist"
+      aria-label={ariaLabel}
+      aria-orientation={orientation}
+      className={cx('ui-tablist', className)}
+      data-variant={variant}
+      data-size={size}
+      data-orientation={orientation}
+      onKeyDown={onKeyDown}
+    >
+      {indicator && (
+        <span
+          className="ui-tablist__indicator"
+          style={vertical ? { transform: `translateY(${indicator.top}px)`, height: indicator.height } : { transform: `translateX(${indicator.left}px)`, width: indicator.width }}
+          aria-hidden
+        />
+      )}
       {children}
     </div>
   );

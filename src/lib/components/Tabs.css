@@ -93,3 +93,17 @@
 .ui-tablist[data-variant='pills'] .ui-tab[aria-selected='true']:hover { background: none; }
 
 .ui-tabpanel:focus-visible { border-radius: var(--radius-md); }
+
+/* vertical ------------------------------------------------------------ */
+.ui-tabs[data-orientation='vertical'] { flex-direction: row; align-items: flex-start; gap: var(--sp-6); }
+.ui-tabs[data-orientation='vertical'] > .ui-tabpanel { flex: 1; min-width: 0; }
+.ui-tablist[data-orientation='vertical'] { flex-direction: column; align-items: stretch; flex-shrink: 0; overflow: visible; }
+.ui-tablist[data-orientation='vertical'] .ui-tab { justify-content: flex-start; text-align: left; }
+.ui-tablist[data-orientation='vertical'] .ui-tab__count { margin-left: auto; }
+.ui-tablist[data-orientation='vertical'] .ui-tablist__indicator { top: 0; left: 0; right: 0; width: auto; }
+.ui-tablist[data-orientation='vertical'][data-variant='line'] { gap: 2px; border-bottom: 0; border-left: 1px solid var(--border-subtle); }
+.ui-tablist[data-orientation='vertical'][data-variant='line'] .ui-tab { height: var(--_h); padding: 0 var(--sp-3); }
+.ui-tablist[data-orientation='vertical'][data-variant='line'] .ui-tablist__indicator { left: -1px; right: auto; bottom: auto; width: 2px; border-radius: 0 2px 2px 0; }
+.ui-tablist[data-orientation='vertical'][data-variant='segmented'] { align-self: stretch; }
+.ui-tablist[data-orientation='vertical'][data-variant='segmented'] .ui-tablist__indicator { top: 0; left: 2px; right: 2px; bottom: auto; }
+.ui-tablist[data-orientation='vertical'][data-variant='pills'] .ui-tablist__indicator { bottom: auto; }

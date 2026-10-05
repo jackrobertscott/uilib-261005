@@ -16,6 +16,8 @@ plus a Storybook-like workbench for browsing components, variants and demo compo
   The library should be complete enough to build an entire application from it alone.
 - **Repo naming:** the GitHub repository must have the same name as the project folder (`uilib-261005`).
 - **Image is inspiration only:** take liberties to define a coherent, complete library.
+- **Grow the library when demos need it:** when building demos/apps, it's fine to add new components to the
+  library (with stories) as long as they fit its design language — prefer that over one-off demo widgets.
 
 ## Layout
 
@@ -23,6 +25,8 @@ plus a Storybook-like workbench for browsing components, variants and demo compo
 - `src/workbench/` — the Storybook-like explorer (sidebar, canvas, controls, token editor).
 - `src/stories/` — one `*.stories.tsx` per component (variants + playground controls).
 - `src/demos/` — full-page compositions built only from library components.
+  - `src/demos/frisbee/` — full rebuild of the Perth Ultimate League app (`../frisbee-211221`) on mock data;
+    reference screenshots live in `screenshots/frisbee/`.
 
 ## Commands
 

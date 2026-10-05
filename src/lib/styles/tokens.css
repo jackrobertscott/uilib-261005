@@ -12,7 +12,7 @@
 :root {
   /* ---- 1. Colour ------------------------------------------------------- */
   --ui-neutral-hue: 270;      /* hue that tints every grey (0–360)          */
-  --ui-neutral-chroma: 0.006; /* how tinted the greys are (0 = pure grey)   */
+  --ui-neutral-chroma: 0.004; /* how tinted the greys are (0 = pure grey)   */
   --ui-accent-hue: 266;       /* hue of the interactive accent (0–360)      */
   --ui-accent-chroma: 0.17;   /* accent saturation (0 = monochrome accent)  */
 
@@ -66,11 +66,11 @@
   --bg-overlay: var(--gray-0);  /* menus, popovers, dialogs                 */
   --bg-subtle: var(--gray-2);   /* table headers, wells                     */
   --bg-muted: var(--gray-3);    /* chips, tracks, neutral badges            */
-  --bg-hover: color-mix(in oklch, var(--gray-12) 5%, transparent);
-  --bg-active: color-mix(in oklch, var(--gray-12) 8%, transparent);
-  --bg-selected: color-mix(in oklch, var(--gray-12) 6.5%, transparent);
+  --bg-hover: color-mix(in oklab, var(--gray-12) 5%, transparent);
+  --bg-active: color-mix(in oklab, var(--gray-12) 8%, transparent);
+  --bg-selected: color-mix(in oklab, var(--gray-12) 6.5%, transparent);
   --bg-inverse: var(--gray-12);
-  --bg-backdrop: color-mix(in oklch, oklch(0.18 0.01 var(--ui-neutral-hue)) 38%, transparent);
+  --bg-backdrop: color-mix(in oklab, oklch(0.18 0.01 var(--ui-neutral-hue)) 38%, transparent);
 
   /* -- Borders ------------------------------------------------------------ */
   --border-subtle: var(--gray-5);
@@ -86,17 +86,17 @@
 
   /* -- Primary (ink) — the dominant action colour of this monochrome theme */
   --primary: var(--gray-12);
-  --primary-hover: color-mix(in oklch, var(--gray-12) 86%, var(--gray-0));
+  --primary-hover: color-mix(in oklab, var(--gray-12) 86%, var(--gray-0));
   --primary-fg: var(--gray-0);
 
   /* -- Accent ------------------------------------------------------------- */
   --accent: oklch(var(--_accent-l) var(--ui-accent-chroma) var(--ui-accent-hue));
   --accent-hover: oklch(calc(var(--_accent-l) - 0.05) var(--ui-accent-chroma) var(--ui-accent-hue));
   --accent-fg: oklch(0.99 0 0);
-  --accent-subtle: color-mix(in oklch, var(--accent) 10%, var(--bg-surface));
-  --accent-border: color-mix(in oklch, var(--accent) 35%, var(--bg-surface));
-  --accent-text: color-mix(in oklch, var(--accent) 85%, var(--text));
-  --ring: color-mix(in oklch, var(--accent) 45%, transparent);
+  --accent-subtle: color-mix(in oklab, var(--accent) 10%, var(--bg-surface));
+  --accent-border: color-mix(in oklab, var(--accent) 35%, var(--bg-surface));
+  --accent-text: color-mix(in oklab, var(--accent) 85%, var(--text));
+  --ring: color-mix(in oklab, var(--accent) 45%, transparent);
 
   /* -- Status (fixed hues, chroma follows nothing so meaning is stable) --- */
   --danger: oklch(var(--_status-l) 0.19 25);
@@ -104,17 +104,17 @@
   --success: oklch(calc(var(--_status-l) + 0.02) 0.14 155);
   --info: var(--accent);
   --danger-hover: oklch(calc(var(--_status-l) - 0.05) 0.19 25);
-  --danger-subtle: color-mix(in oklch, var(--danger) 10%, var(--bg-surface));
-  --warning-subtle: color-mix(in oklch, var(--warning) 14%, var(--bg-surface));
-  --success-subtle: color-mix(in oklch, var(--success) 11%, var(--bg-surface));
+  --danger-subtle: color-mix(in oklab, var(--danger) 10%, var(--bg-surface));
+  --warning-subtle: color-mix(in oklab, var(--warning) 14%, var(--bg-surface));
+  --success-subtle: color-mix(in oklab, var(--success) 11%, var(--bg-surface));
   --info-subtle: var(--accent-subtle);
-  --danger-text: color-mix(in oklch, var(--danger) 85%, var(--text));
-  --warning-text: color-mix(in oklch, oklch(0.55 0.13 60) 90%, var(--text));
-  --success-text: color-mix(in oklch, var(--success) 80%, var(--text));
+  --danger-text: color-mix(in oklab, var(--danger) 85%, var(--text));
+  --warning-text: color-mix(in oklab, oklch(0.55 0.13 60) 90%, var(--text));
+  --success-text: color-mix(in oklab, var(--success) 80%, var(--text));
   --info-text: var(--accent-text);
-  --danger-border: color-mix(in oklch, var(--danger) 30%, var(--bg-surface));
-  --warning-border: color-mix(in oklch, var(--warning) 40%, var(--bg-surface));
-  --success-border: color-mix(in oklch, var(--success) 32%, var(--bg-surface));
+  --danger-border: color-mix(in oklab, var(--danger) 30%, var(--bg-surface));
+  --warning-border: color-mix(in oklab, var(--warning) 40%, var(--bg-surface));
+  --success-border: color-mix(in oklab, var(--success) 32%, var(--bg-surface));
   --info-border: var(--accent-border);
 
   /* -- Data visualisation: 5 hues rotated from the accent ---------------- */
@@ -126,14 +126,14 @@
 
   /* -- Elevation ---------------------------------------------------------- */
   --_shadow-c: oklch(0.2 0.02 var(--ui-neutral-hue));
-  --shadow-xs: 0 1px 2px color-mix(in oklch, var(--_shadow-c) calc(5% * var(--_shadow-a)), transparent);
-  --shadow-sm: 0 1px 2px color-mix(in oklch, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
-               0 1px 3px color-mix(in oklch, var(--_shadow-c) calc(5% * var(--_shadow-a)), transparent);
-  --shadow-md: 0 2px 4px -1px color-mix(in oklch, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
-               0 6px 16px -4px color-mix(in oklch, var(--_shadow-c) calc(10% * var(--_shadow-a)), transparent);
-  --shadow-lg: 0 4px 8px -2px color-mix(in oklch, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
-               0 16px 40px -8px color-mix(in oklch, var(--_shadow-c) calc(18% * var(--_shadow-a)), transparent);
-  --shadow-inset: inset 0 1px 0 color-mix(in oklch, white 70%, transparent);
+  --shadow-xs: 0 1px 2px color-mix(in oklab, var(--_shadow-c) calc(5% * var(--_shadow-a)), transparent);
+  --shadow-sm: 0 1px 2px color-mix(in oklab, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
+               0 1px 3px color-mix(in oklab, var(--_shadow-c) calc(5% * var(--_shadow-a)), transparent);
+  --shadow-md: 0 2px 4px -1px color-mix(in oklab, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
+               0 6px 16px -4px color-mix(in oklab, var(--_shadow-c) calc(10% * var(--_shadow-a)), transparent);
+  --shadow-lg: 0 4px 8px -2px color-mix(in oklab, var(--_shadow-c) calc(6% * var(--_shadow-a)), transparent),
+               0 16px 40px -8px color-mix(in oklab, var(--_shadow-c) calc(18% * var(--_shadow-a)), transparent);
+  --shadow-inset: inset 0 1px 0 color-mix(in oklab, white 70%, transparent);
   --focus-ring: 0 0 0 1px var(--accent), 0 0 0 4px var(--ring);
 
   /* -- Radius ------------------------------------------------------------- */
@@ -207,5 +207,6 @@
   --_status-l: 0.66;
   --_shadow-a: 4;
   --bg-overlay: var(--gray-3);
-  --shadow-inset: inset 0 1px 0 color-mix(in oklch, white 5%, transparent);
+  --warning-text: color-mix(in oklab, var(--warning) 85%, var(--text));
+  --shadow-inset: inset 0 1px 0 color-mix(in oklab, white 5%, transparent);
 }

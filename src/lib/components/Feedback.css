@@ -60,7 +60,7 @@
 .ui-skeleton {
   display: block;
   border-radius: var(--radius-sm);
-  background: linear-gradient(90deg, var(--bg-muted) 25%, color-mix(in oklch, var(--bg-muted), var(--bg-surface) 60%) 50%, var(--bg-muted) 75%);
+  background: linear-gradient(90deg, var(--bg-muted) 25%, color-mix(in oklab, var(--bg-muted), var(--bg-surface) 60%) 50%, var(--bg-muted) 75%);
   background-size: 200% 100%;
   animation: ui-shimmer 1.4s linear infinite;
 }
@@ -86,7 +86,7 @@
   position: absolute;
   inset: -28px;
   border-radius: 50%;
-  background: radial-gradient(circle, transparent 30%, var(--border-subtle) 30.5%, transparent 31.5%, transparent 46%, color-mix(in oklch, var(--border-subtle) 60%, transparent) 46.5%, transparent 47.5%);
+  background: radial-gradient(circle, transparent 30%, var(--border-subtle) 30.5%, transparent 31.5%, transparent 46%, color-mix(in oklab, var(--border-subtle) 60%, transparent) 46.5%, transparent 47.5%);
   pointer-events: none;
 }
 .ui-empty__art .ui-icon-tile { position: relative; }

@@ -30,7 +30,7 @@
   border-radius: 50%;
   background: var(--border-strong);
 }
-.ui-slider__tick[data-in] { background: color-mix(in oklch, var(--primary-fg) 60%, transparent); }
+.ui-slider__tick[data-in] { background: color-mix(in oklab, var(--primary-fg) 60%, transparent); }
 .ui-slider__thumb {
   position: absolute;
   top: 50%;

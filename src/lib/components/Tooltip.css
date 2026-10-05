@@ -18,7 +18,7 @@
 .ui-tooltip[data-side='top'] { --_pop-y: 3px; }
 .ui-tooltip[data-side='bottom'] { --_pop-y: -3px; }
 .ui-tooltip__kbd.ui-kbd {
-  background: color-mix(in oklch, var(--text-inverse) 14%, transparent);
-  border-color: color-mix(in oklch, var(--text-inverse) 20%, transparent);
+  background: color-mix(in oklab, var(--text-inverse) 14%, transparent);
+  border-color: color-mix(in oklab, var(--text-inverse) 20%, transparent);
   color: var(--text-inverse);
 }

@@ -41,7 +41,7 @@
 .ui-control[data-invalid]:focus-within,
 .ui-control[data-invalid][aria-expanded='true'] {
   border-color: var(--danger);
-  box-shadow: var(--shadow-xs), 0 0 0 3px color-mix(in oklch, var(--danger) 25%, transparent);
+  box-shadow: var(--shadow-xs), 0 0 0 3px color-mix(in oklab, var(--danger) 25%, transparent);
 }
 .ui-control[data-disabled] {
   background: var(--bg-subtle);

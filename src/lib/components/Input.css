@@ -22,7 +22,7 @@
 .ui-textarea__el:hover:not(:disabled) { border-color: var(--border-strong); }
 .ui-textarea__el:focus { border-color: var(--accent); box-shadow: var(--shadow-xs), 0 0 0 3px var(--ring); }
 .ui-textarea__el[data-invalid] { border-color: var(--danger); }
-.ui-textarea__el[data-invalid]:focus { box-shadow: var(--shadow-xs), 0 0 0 3px color-mix(in oklch, var(--danger) 25%, transparent); }
+.ui-textarea__el[data-invalid]:focus { box-shadow: var(--shadow-xs), 0 0 0 3px color-mix(in oklab, var(--danger) 25%, transparent); }
 .ui-textarea__el:disabled { background: var(--bg-subtle); color: var(--text-tertiary); cursor: not-allowed; box-shadow: none; }
 .ui-textarea__count {
   align-self: flex-end;

@@ -65,7 +65,7 @@
   --_bg: var(--primary);
   --_fg: var(--primary-fg);
   --_bd: var(--primary);
-  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklch, white 14%, transparent);
+  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklab, white 14%, transparent);
 }
 .ui-btn[data-variant='primary']:hover:not(:disabled) { --_bg: var(--primary-hover); }
 
@@ -76,7 +76,7 @@
 }
 .ui-btn[data-variant='secondary']:hover:not(:disabled),
 .ui-btn[data-variant='secondary'][aria-expanded='true'] {
-  --_bg: color-mix(in oklch, var(--bg-surface), var(--gray-12) 3%);
+  --_bg: color-mix(in oklab, var(--bg-surface), var(--gray-12) 3%);
   --_bd: var(--border-strong);
 }
 
@@ -91,7 +91,7 @@
   --_bg: var(--accent);
   --_fg: var(--accent-fg);
   --_bd: var(--accent);
-  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklch, white 18%, transparent);
+  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklab, white 18%, transparent);
 }
 .ui-btn[data-variant='accent']:hover:not(:disabled) { --_bg: var(--accent-hover); }
 
@@ -99,7 +99,7 @@
   --_bg: var(--danger);
   --_fg: oklch(0.99 0 0);
   --_bd: var(--danger);
-  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklch, white 18%, transparent);
+  --_sh: var(--shadow-xs), inset 0 1px 0 color-mix(in oklab, white 18%, transparent);
 }
 .ui-btn[data-variant='danger']:hover:not(:disabled) { --_bg: var(--danger-hover); }
 
@@ -127,3 +127,13 @@
 .ui-btn-group > .ui-btn:not(:last-child) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
 .ui-btn-group > .ui-btn:hover,
 .ui-btn-group > .ui-btn:focus-visible { z-index: 1; }
+
+/* Keyboard hints inside filled buttons */
+.ui-btn[data-variant='primary'] .ui-kbd,
+.ui-btn[data-variant='accent'] .ui-kbd,
+.ui-btn[data-variant='danger'] .ui-kbd {
+  background: color-mix(in oklab, currentColor 14%, transparent);
+  border-color: color-mix(in oklab, currentColor 22%, transparent);
+  color: inherit;
+}
+.ui-btn--loading:disabled { opacity: 1; cursor: progress; }

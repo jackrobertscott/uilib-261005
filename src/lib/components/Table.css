@@ -42,8 +42,8 @@
 }
 .ui-table tbody tr:last-child td { border-bottom: 0; }
 .ui-table tbody tr { transition: background-color var(--dur-fast); }
-.ui-table tbody tr:hover td { background: color-mix(in oklch, var(--bg-surface), var(--gray-12) 2%); }
-.ui-table tbody tr[aria-selected='true'] td { background: color-mix(in oklch, var(--bg-surface), var(--gray-12) 3.5%); }
+.ui-table tbody tr:hover td { background: color-mix(in oklab, var(--bg-surface), var(--gray-12) 2%); }
+.ui-table tbody tr[aria-selected='true'] td { background: color-mix(in oklab, var(--bg-surface), var(--gray-12) 3.5%); }
 .ui-table tbody tr[data-clickable] { cursor: pointer; }
 .ui-table__select { width: 1%; padding-right: 0 !important; }
 .ui-table__select > span { display: inline-flex; vertical-align: middle; }
@@ -91,6 +91,6 @@
   animation: ui-bulk-in var(--dur) var(--ease);
 }
 .ui-table__bulk-count { font-weight: var(--weight-medium); white-space: nowrap; }
-.ui-table__bulk-sep { width: 1px; height: 16px; background: color-mix(in oklch, var(--text-inverse) 25%, transparent); }
-.ui-table__bulk .ui-btn[data-variant='ghost'] { --_fg: color-mix(in oklch, var(--text-inverse) 80%, transparent); }
-.ui-table__bulk .ui-btn[data-variant='ghost']:hover { --_bg: color-mix(in oklch, var(--text-inverse) 12%, transparent); --_fg: var(--text-inverse); }
+.ui-table__bulk-sep { width: 1px; height: 16px; background: color-mix(in oklab, var(--text-inverse) 25%, transparent); }
+.ui-table__bulk .ui-btn[data-variant='ghost'] { --_fg: color-mix(in oklab, var(--text-inverse) 80%, transparent); }
+.ui-table__bulk .ui-btn[data-variant='ghost']:hover { --_bg: color-mix(in oklab, var(--text-inverse) 12%, transparent); --_fg: var(--text-inverse); }

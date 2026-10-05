@@ -56,7 +56,7 @@
 .ui-timeline__marker { display: grid; place-items: center; width: 24px; height: 24px; flex-shrink: 0; }
 .ui-timeline__marker svg { width: 14px; height: 14px; color: var(--text-secondary); }
 .ui-timeline__marker:has(svg) { border-radius: 50%; border: 1px solid var(--border); background: var(--bg-surface); box-shadow: var(--shadow-xs); }
-.ui-timeline__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--_c); box-shadow: 0 0 0 3px color-mix(in oklch, var(--_c) 18%, transparent); }
+.ui-timeline__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--_c); box-shadow: 0 0 0 3px color-mix(in oklab, var(--_c) 18%, transparent); }
 .ui-timeline__content { flex: 1; min-width: 0; padding-top: 2px; font-size: var(--fs-sm); }
 .ui-timeline__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); }
 .ui-timeline__title { color: var(--text); }

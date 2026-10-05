@@ -17,7 +17,7 @@
 .ui-card[data-padding='lg'] { padding: var(--sp-6); }
 .ui-card[data-interactive] { cursor: pointer; }
 .ui-card[data-interactive]:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
-.ui-card[data-interactive]:active { background: color-mix(in oklch, var(--bg-surface), var(--gray-12) 2%); }
+.ui-card[data-interactive]:active { background: color-mix(in oklab, var(--bg-surface), var(--gray-12) 2%); }
 .ui-card[data-interactive]:focus-visible { box-shadow: var(--focus-ring); }
 .ui-card[data-selected] { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
 

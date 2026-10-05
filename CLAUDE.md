@@ -18,6 +18,10 @@ plus a Storybook-like workbench for browsing components, variants and demo compo
 - **Image is inspiration only:** take liberties to define a coherent, complete library.
 - **Grow the library when demos need it:** when building demos/apps, it's fine to add new components to the
   library (with stories) as long as they fit its design language — prefer that over one-off demo widgets.
+- **Frisbee app adoption:** the library is *copied* (vendored) into `../frisbee-211221/browser/src/ui` and the
+  Frisbee demo becomes that repo's real UI. Work there on a feature branch (`new-ui`) that later merges into
+  `stage`, then `master`. Commit at every milestone in the frisbee repo too (its style: short lowercase messages).
+  No feature regressions versus the old UI.
 
 ## Layout
 

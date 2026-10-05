@@ -175,3 +175,11 @@ body { background: var(--bg-canvas); }
   .wb-sidebar { display: none; }
   .wb-page { padding: var(--sp-6) var(--sp-4) var(--sp-12); }
 }
+@media (max-width: 860px) {
+  .wb-topbar { padding: 0 var(--sp-3); }
+  .wb-topbar .ui-crumbs li:not(:last-child) { display: none; }
+  .wb-topbar .ui-crumbs__current { white-space: nowrap; }
+  .wb-topbar__actions .ui-segmented,
+  .wb-topbar__actions > .ui-btn[data-variant='ghost'] { display: none; }
+  .wb-demo { padding: var(--sp-2); }
+}

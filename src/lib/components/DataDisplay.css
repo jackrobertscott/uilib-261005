@@ -2,7 +2,7 @@
 .ui-stat { display: flex; flex-direction: column; gap: var(--sp-3); min-width: 0; }
 .ui-stat__head { display: flex; align-items: center; gap: var(--sp-2); }
 .ui-stat__label { font-size: var(--fs-sm); color: var(--text-secondary); font-weight: var(--weight-medium); }
-.ui-stat__body { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); }
+.ui-stat__body { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); }
 .ui-stat__value { font-size: var(--fs-3xl); font-weight: var(--weight-semibold); letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .ui-stat__delta { display: flex; align-items: center; gap: var(--sp-1-5); margin-top: var(--sp-2); font-size: var(--fs-xs); }
 .ui-stat__chip {
@@ -18,7 +18,7 @@
 }
 .ui-stat__chip[data-good] { color: var(--success-text); background: var(--success-subtle); border-color: var(--success-border); }
 .ui-stat__chip svg { width: 12px; height: 12px; }
-.ui-stat__delta-label { color: var(--text-tertiary); }
+.ui-stat__delta-label { color: var(--text-tertiary); white-space: nowrap; }
 .ui-stat__chart { flex-shrink: 0; }
 
 .ui-sparkline { color: var(--accent); overflow: visible; }

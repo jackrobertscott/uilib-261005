@@ -25,5 +25,5 @@ plus a Storybook-like workbench for browsing components, variants and demo compo
 
 ## Commands
 
-- `npm run dev` — start the workbench.
+- `npm run dev` — start the workbench (Vite).
 - `npm run build` — type-check and build.

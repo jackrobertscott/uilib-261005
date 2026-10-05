@@ -49,7 +49,7 @@
 .ui-btn[data-size='lg'] { --_h: var(--h-lg); --_px: var(--sp-4); --_fs: var(--fs-md); gap: var(--sp-2); }
 
 .ui-btn--icon { width: var(--_h); padding: 0; }
-.ui-btn--full { width: 100%; }
+.ui-btn--full { width: 100%; flex-shrink: 1; } /* share a row with siblings */
 
 .ui-btn__icon { display: inline-flex; flex-shrink: 0; }
 .ui-btn__icon svg { width: 1.15em; height: 1.15em; }

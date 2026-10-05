@@ -3,7 +3,9 @@
 .ui-number .ui-control__input { text-align: center; font-variant-numeric: tabular-nums; padding: 0 var(--sp-2); }
 .ui-number[data-variant='inline'] .ui-control__input { text-align: left; padding-left: var(--_px); }
 .ui-number__affix { color: var(--text-tertiary); font-size: var(--fs-sm); }
-.ui-number__affix:first-of-type { padding-left: var(--sp-2); }
+.ui-number__affix--prefix { padding-left: var(--_px); }
+.ui-number__affix--suffix { padding: 0 var(--_px) 0 var(--sp-1); }
+.ui-number[data-variant='inline'] .ui-number__affix--prefix + .ui-control__input { padding-left: var(--sp-1-5); }
 .ui-number__btn {
   display: grid;
   place-items: center;

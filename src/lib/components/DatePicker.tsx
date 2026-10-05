@@ -178,7 +178,7 @@ export function Calendar(props: CalendarProps | RangeCalendarProps) {
                 const isFocused = sameDay(d, focused) && !outside;
                 if (outside && months > 1) return <span key={d.toISOString()} className="ui-cal__cell" />;
                 return (
-                  <span role="gridcell" key={d.toISOString()} className="ui-cal__cell" data-in-range={inRange || undefined} data-range-start={isStart || undefined} data-range-end={isEnd || undefined}>
+                  <span role="gridcell" key={d.toISOString()} className="ui-cal__cell" data-in-range={inRange || undefined} data-range-start={isStart || undefined} data-range-end={isEnd || undefined} data-month-first={d.getDate() === 1 || undefined} data-month-last={sameDay(addDays(d, 1), new Date(d.getFullYear(), d.getMonth() + 1, 1)) || undefined}>
                     <button
                       type="button"
                       tabIndex={isFocused ? 0 : -1}

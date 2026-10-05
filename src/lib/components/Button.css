@@ -21,6 +21,7 @@
   font-size: var(--_fs);
   font-weight: var(--weight-medium);
   line-height: 1;
+  flex-shrink: 0;
   white-space: nowrap;
   user-select: none;
   text-decoration: none;

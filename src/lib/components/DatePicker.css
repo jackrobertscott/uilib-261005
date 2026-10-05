@@ -20,9 +20,16 @@
 .ui-cal__cell[data-range-end]::before {
   content: '';
   position: absolute;
-  inset: 2px 0;
-  background: var(--bg-muted);
+  inset: 1px 0;
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
 }
+.ui-cal__cell[data-in-range] .ui-cal__day { color: var(--text); font-weight: var(--weight-medium); }
+.ui-cal__cell[data-in-range] .ui-cal__day:hover:not(:disabled) { background: color-mix(in oklab, var(--primary) 10%, transparent); }
+/* Round the band where it breaks (week and month edges). */
+.ui-cal__row > .ui-cal__cell[data-in-range]:first-child::before,
+.ui-cal__cell[data-in-range][data-month-first]::before { border-top-left-radius: var(--radius-md); border-bottom-left-radius: var(--radius-md); }
+.ui-cal__row > .ui-cal__cell[data-in-range]:last-child::before,
+.ui-cal__cell[data-in-range][data-month-last]::before { border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
 .ui-cal__cell[data-range-start]::before { left: 50%; }
 .ui-cal__cell[data-range-end]::before { right: 50%; }
 .ui-cal__cell[data-range-start][data-range-end]::before { display: none; }

@@ -92,7 +92,7 @@ export function NumberInput({
   return (
     <div className={cx('ui-control ui-number', className)} data-variant={variant} data-size={size} data-invalid={field.invalid || undefined} data-disabled={field.disabled || undefined}>
       {variant === 'stepper' && dec}
-      {prefix && <span className="ui-control__icon ui-number__affix">{prefix}</span>}
+      {prefix && <span className="ui-control__icon ui-number__affix ui-number__affix--prefix">{prefix}</span>}
       <input
         id={field.id}
         role="spinbutton"
@@ -111,7 +111,7 @@ export function NumberInput({
         onBlur={(e) => draft != null && commit(e.target.value)}
         onKeyDown={onKeyDown}
       />
-      {suffix && <span className="ui-control__icon ui-number__affix">{suffix}</span>}
+      {suffix && <span className="ui-control__icon ui-number__affix ui-number__affix--suffix">{suffix}</span>}
       {variant === 'stepper' && inc}
       {variant === 'inline' && (
         <span className="ui-number__stack">

@@ -18,7 +18,6 @@ body {
   line-height: var(--leading);
   color: var(--text);
   background: var(--bg-app);
-  font-feature-settings: 'cv11', 'ss01', 'ss03';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

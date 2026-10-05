@@ -14,9 +14,9 @@ export const PRIMITIVES = {
 export type PrimitiveKey = keyof typeof PRIMITIVES;
 
 export const FONTS = [
-  { value: "'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif", label: 'Inter' },
+  { value: "'Geist Variable', 'Geist', ui-sans-serif, system-ui, sans-serif", label: 'Geist' },
   { value: "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif", label: 'System UI' },
-  { value: "'JetBrains Mono Variable', ui-monospace, monospace", label: 'JetBrains Mono' },
+  { value: "'Geist Mono Variable', ui-monospace, monospace", label: 'Geist Mono' },
   { value: "ui-serif, Georgia, 'Times New Roman', serif", label: 'Serif' },
 ];
 

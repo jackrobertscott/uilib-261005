@@ -19,8 +19,8 @@ const primitives = [
   ['--ui-radius', '8px', 'Base radius. xs/sm/md/lg/xl radii are multiples of it.'],
   ['--ui-space', '4px', 'Base spacing unit. All padding, gaps and control heights are multiples.'],
   ['--ui-font-size', '14px', 'Body size. The 9-step type scale is derived from it.'],
-  ['--ui-font-sans', 'Inter', 'Interface typeface.'],
-  ['--ui-font-mono', 'JetBrains Mono', 'Code & tabular typeface.'],
+  ['--ui-font-sans', 'Geist', 'Interface typeface.'],
+  ['--ui-font-mono', 'Geist Mono', 'Code & tabular typeface.'],
 ];
 
 export default defineStories({
@@ -162,7 +162,7 @@ export const typography = defineStories({
   title: 'Typography',
   group: 'Foundations',
   order: 3,
-  description: 'Inter with tabular figures where numbers align. Sizes derive from --ui-font-size.',
+  description: 'Geist with tabular figures where numbers align. Sizes derive from --ui-font-size.',
   stories: [
     {
       name: 'Type scale',

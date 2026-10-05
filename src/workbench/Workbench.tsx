@@ -134,7 +134,7 @@ export function Workbench() {
                 className="ui-btn ui-btn--icon"
                 data-variant="ghost"
                 data-size="sm"
-                href="https://github.com/jackrobertscott/uilib"
+                href="https://github.com/jackrobertscott/uilib-261005"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="View source on GitHub"

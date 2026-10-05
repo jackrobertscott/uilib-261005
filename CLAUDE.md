@@ -14,6 +14,7 @@ plus a Storybook-like workbench for browsing components, variants and demo compo
   may use an underlying `<input>`/`<textarea>`, but fully restyled.
 - **Quality bar:** components must be high quality, usable, keyboard-accessible and contemporary.
   The library should be complete enough to build an entire application from it alone.
+- **Repo naming:** the GitHub repository must have the same name as the project folder (`uilib-261005`).
 - **Image is inspiration only:** take liberties to define a coherent, complete library.
 
 ## Layout
